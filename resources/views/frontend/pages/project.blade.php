@@ -13,6 +13,10 @@
     $multiImages = App\Models\Home\MultiImage::latest()->paginate(6);
 @endphp
 
+@section('title')
+    {{ $abouts->coy_name }} | Projects
+@endsection
+
 
 <!-- page-title -->
 <div class="ttm-page-title-row">

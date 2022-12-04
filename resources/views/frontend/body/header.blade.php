@@ -4,6 +4,11 @@
 $contacts = App\Models\Home\HomeContact::findOrFail(1);
 $services = App\Models\Home\HomeService::all();
 
+$prefix = Request::route()->getPrefix();
+$route = Route::current()->getName();
+    // dd($prefix)
+    // dd($route)
+
 @endphp
 
 
@@ -58,7 +63,7 @@ $services = App\Models\Home\HomeService::all();
                     <a class="home-link" href="{{ url('/') }}" title="Fanimic Global Resources" rel="home">
                         <img id="logo-img" class="img-center" src="{{ asset('frontend/images/fanimic.jpg') }}" alt="logo-img">
                     </a>
-                </div><!-- site-branding end -->
+                </div><!-- site-branding end --> 
                 <!-- ttm-top-info-con-->
                 <div class="ttm-top-info-con clearfix">
                     <ul>
@@ -123,35 +128,35 @@ $services = App\Models\Home\HomeService::all();
                                 </div>
                                 <nav id="menu" class="menu">
                                     <ul class="dropdown">
-                                        <li class="active"><a href="{{ url('/') }}">Home</a>
+                                        <li class="{{ Request::path() == '/' ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a>
                                             <ul>
-                                                <li class="active"><a href="{{ url('/') }}">Home </a></li>
+                                                <li class="{{ ($route == 'home') ? 'active': '' }}"><a href="{{ url('/') }}">Home </a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('about.page') }}">About Us</a>
+                                        <li class="{{ Request::path() == 'about' ? 'active' : '' }}"><a href="{{ route('about.page') }}">About Us</a>
                                             <ul>
-                                                <li><a href="{{ route('about.page') }}">About Us </a></li>
+                                                <li class="{{ ($route == 'about.page') ? 'active': '' }}"><a href="{{ route('about.page') }}">About Us </a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('services.page') }}">Services</a>
+                                        <li class="{{ ($prefix == '/services') ? 'active': '' }}"><a href="{{ route('services.page') }}">Services</a>
                                             <ul>
-                                                <li><a href="{{ route('services.page') }}">Our Services</a></li>
-                                                <li><a href="{{ route('building.page') }}">Building Construction</a></li>
-                                                <li><a href="{{ route('eletrical.page') }}">Electrical Installation</a></li>
-                                                <li><a href="{{ route('interiors.page') }}">Interiors &amp; Exteriors Decorator</a></li>
-                                                <li><a href="{{ route('manufacturing.page') }}">Bottle &amp; Pure Water</a></li>
-                                                <li><a href="{{ route('agriculture.page') }}">Agriculture</a></li>
-                                                <li><a href="{{ route('agriculture.page') }}">Fumigation &amp; Pest COntrol</a></li>
+                                                <li class="{{ ($route == 'services.page') ? 'active': '' }}"><a href="{{ route('services.page') }}">Our Services</a></li>
+                                                <li class="{{ ($route == 'building.page') ? 'active': '' }}"><a href="{{ route('building.page') }}">Building Construction</a></li>
+                                                <li class="{{ ($route == 'eletrical.page') ? 'active': '' }}"><a href="{{ route('eletrical.page') }}">Electrical Installation</a></li>
+                                                <li class="{{ ($route == 'interiors.page') ? 'active': '' }}"><a href="{{ route('interiors.page') }}">Interiors &amp; Exteriors Decorator</a></li>
+                                                <li class="{{ ($route == 'manufacturing.page') ? 'active': '' }}"><a href="{{ route('manufacturing.page') }}">Bottle &amp; Pure Water</a></li>
+                                                <li class="{{ ($route == 'agriculture.page') ? 'active': '' }}"><a href="{{ route('agriculture.page') }}">Agriculture</a></li>
+                                                <li class="{{ ($route == 'agriculture.page') ? 'active': '' }}"><a href="{{ route('agriculture.page') }}">Fumigation &amp; Pest COntrol</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('team.page') }}">Our Team</a></li>
+                                        <li class="{{ ($route == 'team.page') ? 'active': '' }}"><a href="{{ route('team.page') }}">Our Team</a></li>
 
-                                        <li><a href="{{ route('project.page') }}">Projects</a>
+                                        <li class="{{ ($route == 'project.page') ? 'active': '' }}"><a href="{{ route('project.page') }}">Projects</a>
                                             <ul>
-                                                <li><a href="{{ route('project.page') }}">Our Projects</a></li>
+                                                <li class="{{ ($route == 'project.page') ? 'active': '' }}"><a href="{{ route('project.page') }}">Our Projects</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('contact.page') }}">Contact</a></li>
+                                        <li class="{{ ($route == 'contact.page') ? 'active': '' }}"><a href="{{ route('contact.page') }}">Contact</a></li>
                                        
                                     </ul>
                                 </nav>

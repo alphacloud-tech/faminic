@@ -2,16 +2,17 @@
 <html lang="en">
 
 <head>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="keywords" content="HTML5 Template" />
-<meta name="description" content="Tectxon - Industry & Factory HTML Template" />
-<meta name="author" content="https://www.themetechmount.com/" />
+<meta name="keywords" content="Fanimic Global Resources" />
+<meta name="description" content="Fanimic Global Resources" />
+<meta name="Fanimic Global Resources" content="Fanimic Global Resources" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Tectxon - Industry & Factory HTML Template</title>
+<title>@yield('title')</title>
 
 <!-- favicon icon -->
-<link rel="shortcut icon" href="{{ asset('frontend/images/favicon.png') }}" />
+<link rel="shortcut icon" href="{{ asset('frontend/images/favicon1.png') }}" />
 
 <!-- bootstrap -->
 <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/bootstrap.min.css') }}"/>

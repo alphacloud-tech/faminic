@@ -7,7 +7,11 @@ use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\HomeTestimonialController;
 use App\Http\Controllers\Home\MultiImageController;
 use App\Http\Controllers\Home\UserController;
+use App\Mail\ContactMail;
 use App\Models\Home\HomeSlider;
+// use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,9 +41,46 @@ Route::get('/team', function () {
     return view('frontend.pages.team');
 })->name('team.page');
 
+
+
+
+
+
+
 Route::get('/contact', function () {
+
     return view('frontend.pages.contact');
 })->name('contact.page');
+
+Route::post('/contact/store', function (Request $request) {
+    $data = [
+        'name' => $request->name,
+        'email' => $request->email,
+        'subject' => $request->subject,
+        'message' => $request->message,
+        'phone' => $request->phone,
+        // 'created_at' => Carbon::now(),
+    ];
+
+    Mail::to($request->email)->send(new ContactMail($data));
+    $notification = array(
+        'message' => 'Your message has been send successfully',
+        'alert-type' => 'success');
+    return redirect()->back()->with($notification);
+})->name('contact.store');
+
+
+// Route::post('/stripe/order', [StripeController::class, 'storeStripeOrder'])->name('stripe.order');
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/project', function () {
     return view('frontend.pages.project');

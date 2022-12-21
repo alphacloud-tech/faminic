@@ -18,7 +18,7 @@
         <div class="section-overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12"> 
+                <div class="col-md-12">
                     <div style="background-color:rgb(2,13,38)"  class="title-box">
                         <div class="page-title-heading">
                             <h1 class="title">Contact Us</h1>
@@ -29,11 +29,11 @@
                             </span>
                             <span class="ttm-bread-sep"> &nbsp; ⁄ &nbsp;</span>
                             <span><span>Contact Us </span></span>
-                        </div>  
+                        </div>
                     </div>
-                </div>  
+                </div>
             </div>
-        </div>                   
+        </div>
     </div><!-- page-title end-->
 
 
@@ -56,8 +56,8 @@
                                         <div class="heading-seperator"><span></span></div>
                                         <p>Please fill out the request for quote form below and our expert team will get back to you shortly.</p>
                                     </div><!-- section title end -->
-                                    <form id="contactform" class="contactform style2 wrap-form clearfix" method="post" action="{% url 'contact' %}" novalidate="novalidate">
-                                        
+                                    <form id="contactform" class="contactform style2 wrap-form clearfix" method="post" action="{{ route('contact.store') }}" novalidate="novalidate">
+                                            @csrf
                                         <label>
                                             <i class="ti ti-user"></i>
                                             <span class="ttm-form-control">
@@ -77,6 +77,12 @@
                                             </span>
                                         </label>
                                         <label>
+                                            <i class="ti ti-headphone"></i>
+                                            <span class="ttm-form-control">
+                                                <input class="text-input" name="subject" type="text" value="" placeholder="Subject:*">
+                                            </span>
+                                        </label>
+                                        <label>
                                             <i class="ti ti-comment"></i>
                                             <span class="ttm-form-control">
                                                 <textarea class="text-area" name="message" placeholder="Your Message:*" required="required"></textarea>
@@ -84,7 +90,7 @@
                                         </label>
                                         <input name="submit" type="submit" value="Submit Now!" class="ttm-btn ttm-btn-size-md  ttm-btn-style-border ttm-btn-color-white" id="submit" title="Submit now"/>
                                     </form>
-                                    
+
                                 </div>
                                 <div class="col-md-2"></div>
                             </div>
@@ -98,7 +104,7 @@
                                 <h2 class="ttm-textcolor-white mb-20">Drop in our office</h2>
                                 <!--featured-box-->
                                 <div class="featured-box style9 left-icon">
-                                    <div class="featured-icon icon-white"> 
+                                    <div class="featured-icon icon-white">
                                         <i class="ti ti-mobile"></i>
                                     </div>
                                     <div class="featured-content">
@@ -115,8 +121,8 @@
                                 </div><!-- featured-box end-->
                                 <!--featured-box-->
                                 <div class="featured-box style9 left-icon">
-                                    <div class="featured-icon icon-white"> 
-                                        <i class="ti ti-email"></i>    
+                                    <div class="featured-icon icon-white">
+                                        <i class="ti ti-email"></i>
                                     </div>
                                     <div class="featured-content">
                                         <div class="featured-title">
@@ -130,8 +136,8 @@
                                 </div><!-- featured-box end-->
                                 <!--featured-box-->
                                 <div class="featured-box style9 left-icon">
-                                    <div class="featured-icon icon-white"> 
-                                        <i class="ti ti-location-pin"></i>        
+                                    <div class="featured-icon icon-white">
+                                        <i class="ti ti-location-pin"></i>
                                     </div>
                                     <div class="featured-content">
                                         <div class="featured-title">
@@ -146,15 +152,15 @@
                                 </div><!-- featured-box end-->
                                 <!--featured-box-->
                                 <div class="featured-box style9 left-icon">
-                                    <div class="featured-icon icon-white"> 
-                                        <i class="ti ti-location-pin"></i>        
+                                    <div class="featured-icon icon-white">
+                                        <i class="ti ti-location-pin"></i>
                                     </div>
                                     <div class="featured-content">
                                         <div class="featured-title">
                                             <h5>Branch</h5>
                                         </div>
                                         <div class="featured-desc">
-                                           <p>329, College Rd, Eleyo, Opp. High Court, Ikere Ekiti, Ekiti State.</p> 
+                                           <p>329, College Rd, Eleyo, Opp. High Court, Ikere Ekiti, Ekiti State.</p>
                                         </div>
                                     </div>
                                 </div><!-- featured-box end-->
@@ -179,10 +185,9 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.3366444565004!2d3.2162026142654345!3d6.728717195135673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9862b5afbba9%3A0x7be08c0310ebaa42!2sChurch%20Ijako!5e0!3m2!1sen!2sng!4v1633146465320!5m2!1sen!2sng" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
-        
-        
+
+
     </div><!--site-main end-->
 
 <br><br>
 @endsection
-   

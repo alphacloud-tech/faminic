@@ -12,6 +12,10 @@
     $multiImages = App\Models\Home\MultiImage::latest()->paginate(6);
 @endphp
 
+@section('title')
+    {{ $abouts->coy_name }} | About
+@endsection
+
 
     <!-- page-title -->
     <div class="ttm-page-title-row">
@@ -127,7 +131,7 @@
                         </div><!-- section-title end -->
                     </div>
                     <div class="col-lg-3 col-md-12">
-                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-white mt-30 mb-35 res-991-mtb-0 float-right" href="{% url 'services' %}">More Services</a>
+                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-white mt-30 mb-35 res-991-mtb-0 float-right" href="{{ route('services.page') }}">More Services</a>
                     </div>
                     <div class="col-lg-12">
                         <div class="separator mb-45 res-991-pt-50">
@@ -152,7 +156,7 @@
 										Contracting embarked modestly and today it’s an established name to 
 										reckon within country.  
                                     </p>
-                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="{% url 'building' %}">Read More</a>
+                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="{{ route('building.page') }}">Read More</a>
                                 </div>
                             </div>
                         </div><!-- featured-box end-->
@@ -174,7 +178,7 @@
 										commercial electrical contractor in Nigeria, providing 
 										various electrical services.
                                     </p>
-                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="{% url 'electrical' %}">Read More</a>
+                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="{{ route('eletrical.page') }}">Read More</a>
                                 </div>
                             </div>
                         </div><!-- featured-box end-->
@@ -197,7 +201,7 @@
 										At Fanimic Global Resource we are one of the best in the 
 										Industry, providing cost-effective and reliable home decorations.
                                     </p>
-                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="{% url 'decorator' %}">Read More</a>
+                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="{{ route('interiors.page') }}">Read More</a>
                                 </div>
                             </div>
                         </div><!-- featured-box end-->
@@ -220,7 +224,7 @@
 										and innovative water dispensers with accessories and technology 
 										that supports healthy water drinking habit for all.
                                     </p>
-                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="">Read More</a>
+                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="{{ route('manufacturing.page') }}">Read More</a>
                                 </div>
                             </div>
                         </div><!-- featured-box end-->
@@ -245,7 +249,7 @@
                                         agricultural output for better agricultural 
                                         services and products.
                                     </p>
-                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="">Read More</a>
+                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="{{ route('agriculture.page') }}">Read More</a>
                                 </div>
                             </div>
                         </div><!-- featured-box end-->
@@ -267,7 +271,7 @@
                                         which allowed in successfully delivering projects to
                                         number of clients.
                                     </p>
-                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="">Read More</a>
+                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="{{ route('agriculture.page') }}">Read More</a>
                                 </div>
                             </div>
                         </div><!-- featured-box -->
@@ -502,7 +506,7 @@
                         </div><!-- section-title end -->
                     </div>
                     <div class="col-lg-3 col-md-12">
-                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mt-30 mb-35 res-991-mtb-0 float-right" href="{% url 'team' %}">View All Team</a>
+                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mt-30 mb-35 res-991-mtb-0 float-right" href="{{ route('team.page') }}">View All Team</a>
                     </div>
                 </div><!-- row end -->
                 <!-- row -->
@@ -519,7 +523,7 @@
                                     </div> 
                                     <div class="ttm-box-view-overlay ttm-team-box-view-overlay">
                                         <div class="featured-iconbox">
-                                            <a href="{% url 'team' %}"><i class="ti ti-plus"></i></a>
+                                            <a href="{{ route('team.page') }}"><i class="ti ti-plus"></i></a>
                                         </div>
                                     </div>
                                 </div><!-- ttm-item-view-leftimage end--> 
@@ -527,7 +531,7 @@
                             <div class="col-lg-7 col-md-6 featured-img-right ttm-post-content">
                                 <div class="content-post content-team-post">
                                     <div class="content-post-desc">
-                                        <h5 class="title-post"><a href="{% url 'team' %}">Engr Muyiwa Olaniyi</a></h5>
+                                        <h5 class="title-post"><a href="{{ route('team.page') }}">Engr Muyiwa Olaniyi</a></h5>
                                         <p class="category">Chief Executive Officer</p>
                                         <ul class="ttm-team-details-list">
                                             <li>
@@ -571,7 +575,7 @@
                                     </div> 
                                     <div class="ttm-box-view-overlay ttm-team-box-view-overlay">
                                         <div class="featured-iconbox">
-                                            <a href="{% url 'team' %}"><i class="ti ti-plus"></i></a>
+                                            <a href="{{ route('team.page') }}"><i class="ti ti-plus"></i></a>
                                         </div>
                                     </div>
                                 </div><!-- ttm-item-view-leftimage end-->
@@ -579,7 +583,7 @@
                             <div class="col-lg-7 col-md-6 featured-img-right ttm-post-content">
                                 <div class="content-post content-team-post">
                                     <div class="content-post-desc">
-                                        <h5 class="title-post"><a href="{% url 'team' %}">Mrs Muyiwa Olumide</a></h5>
+                                        <h5 class="title-post"><a href="{{ route('team.page') }}">Mrs Muyiwa Olumide</a></h5>
                                         <p class="category">Executive Marketing Manager</p>
                                         <ul class="ttm-team-details-list">
                                             <li>
@@ -622,7 +626,7 @@
                                     </div> 
                                     <div class="ttm-box-view-overlay ttm-team-box-view-overlay">
                                         <div class="featured-iconbox">
-                                            <a href="{% url 'team' %}"><i class="ti ti-plus"></i></a>
+                                            <a href="{{ route('team.page') }}"><i class="ti ti-plus"></i></a>
                                         </div>
                                     </div>
                                 </div><!-- ttm-item-view-leftimage end-->
@@ -630,7 +634,7 @@
                             <div class="col-lg-7 col-md-6 featured-img-right ttm-post-content">
                                 <div class="content-post content-team-post">
                                     <div class="content-post-desc">
-                                        <h5 class="title-post"><a href="{% url 'team' %}">Adu Adekunle</a></h5>
+                                        <h5 class="title-post"><a href="{{ route('team.page') }}">Adu Adekunle</a></h5>
                                         <p class="category">Client Services Executive</p>
                                         <ul class="ttm-team-details-list">
                                             <li>
@@ -673,7 +677,7 @@
                                     </div> 
                                     <div class="ttm-box-view-overlay ttm-team-box-view-overlay">
                                         <div class="featured-iconbox">
-                                            <a href=""><i class="ti ti-plus"></i></a>
+                                            <a href="{{ route('team.page') }}"><i class="ti ti-plus"></i></a>
                                         </div>
                                     </div>
                                 </div><!-- ttm-item-view-leftimage end-->
@@ -681,7 +685,7 @@
                             <div class="col-lg-7 col-md-6 featured-img-right ttm-post-content">
                                 <div class="content-post content-team-post">
                                     <div class="content-post-desc">
-                                        <h5 class="title-post"><a href="">Agboola Oluwaseyi</a></h5>
+                                        <h5 class="title-post"><a href="{{ route('team.page') }}">Agboola Oluwaseyi</a></h5>
                                         <p class="category">Sales Manager</p>
                                         <ul class="ttm-team-details-list">
                                             <li>
@@ -724,7 +728,7 @@
                                     </div>
                                     <div class="ttm-box-view-overlay ttm-team-box-view-overlay">
                                         <div class="featured-iconbox">
-                                            <a href="{% url 'team' %}"><i class="ti ti-plus"></i></a>
+                                            <a href="{{ route('team.page') }}"><i class="ti ti-plus"></i></a>
                                         </div>
                                     </div>
                                 </div><!-- ttm-item-view-leftimage end-->
@@ -732,7 +736,7 @@
                             <div class="col-lg-7 col-md-6 featured-img-right ttm-post-content">
                                 <div class="content-post content-team-post">
                                     <div class="content-post-desc">
-                                        <h5 class="title-post"><a href="">Ogunbiyi Michael</a></h5>
+                                        <h5 class="title-post"><a href="{{ route('team.page') }}">Ogunbiyi Michael</a></h5>
                                         <p class="category">Social Media Marketer</p>
                                         <ul class="ttm-team-details-list">
                                             <li>
@@ -775,7 +779,7 @@
                                     </div> 
                                     <div class="ttm-box-view-overlay ttm-team-box-view-overlay">
                                         <div class="featured-iconbox">
-                                            <a href="{% url 'team' %}"><i class="ti ti-plus"></i></a>
+                                            <a href="{{ route('team.page') }}"><i class="ti ti-plus"></i></a>
                                         </div>
                                     </div>
                                 </div><!-- ttm-item-view-leftimage end-->
@@ -783,7 +787,7 @@
                             <div class="col-lg-7 col-md-6 featured-img-right ttm-post-content">
                                 <div class="content-post content-team-post">
                                     <div class="content-post-desc">
-                                        <h5 class="title-post"><a href="team-details.html">Afolabi Ope </a></h5>
+                                        <h5 class="title-post"><a href="{{ route('team.page') }}">Afolabi Ope </a></h5>
                                         <p class="category">Accountant</p>
                                         <ul class="ttm-team-details-list">
                                             <li>
@@ -826,7 +830,7 @@
                                     </div> 
                                     <div class="ttm-box-view-overlay ttm-team-box-view-overlay">
                                         <div class="featured-iconbox">
-                                            <a href=""><i class="ti ti-plus"></i></a>
+                                            <a href="{{ route('team.page') }}"><i class="ti ti-plus"></i></a>
                                         </div>
                                     </div>
                                 </div><!-- ttm-item-view-leftimage end-->
@@ -834,7 +838,7 @@
                             <div class="col-lg-7 col-md-6 featured-img-right ttm-post-content">
                                 <div class="content-post content-team-post">
                                     <div class="content-post-desc">
-                                        <h5 class="title-post"><a href="team-details.html">Oni Peter </a></h5>
+                                        <h5 class="title-post"><a href="{{ route('team.page') }}">Oni Peter </a></h5>
                                         <p class="category">Logistics Manager</p>
                                         <ul class="ttm-team-details-list">
                                             <li>

@@ -75,7 +75,7 @@
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                         <a class="dropdown-item" href="{{ route('admin.edit.testimonial', $item->id) }}">Edit</a>
-                                                        <a class="dropdown-item" href="{{ route('admin.delete.testimonial', $item->id) }}">Delete</a>
+                                                        {{-- <a class="dropdown-item" href="{{ route('admin.delete.testimonial', $item->id) }}">Delete</a> --}}
                                                     </div>
                                                 </div>
                                             </div><!-- end col -->

@@ -9,11 +9,15 @@
     $sliders = App\Models\Home\HomeSlider::latest()->paginate(4);
 
     $abouts = App\Models\Home\HomeAbout::findOrFail(1);
+    $contacts = App\Models\Home\HomeContact::findOrFail(1);
     $services = App\Models\Home\HomeService::all();
     $testimonials = App\Models\Home\HomeTestimonial::latest()->get();
     $multiImages = App\Models\Home\MultiImage::latest()->paginate(6);
 @endphp
 
+@section('title')
+    {{ $abouts->coy_name }} | Home
+@endsection
 
 <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container slide-overlay" data-alias="classic4export" data-source="gallery">
 
@@ -580,8 +584,8 @@
                                     </div>
                                     <div class="featured-content ttm-bgcolor-darkgrey">
                                         <div class="featured-desc">
-                                            <p>Let's Call Us to get a Free Estimate</p>
-                                            <h3>888 555 1414</h3>
+                                            <p>Contact Us to get a Free Estimate</p>
+                                            <h3>{{ $contacts->phone_1 }}</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -685,12 +689,12 @@
                 <div class="col-lg-9 col-md-12">
                     <!-- section-title -->
                     <div class="section-title style2 clearfix">
-                        <h2 class="title">General<strong>Contractor Services Solutions</strong></h2>
+                        <h2 class="title">General <strong>Contractor Services Solutions</strong></h2>
                         <p>{{ ucwords(strtolower($abouts->coy_name)) }} has 29+ years of experience with providing wide area of specialty services works listed below.</p>
                     </div><!-- section-title end -->
                 </div>
                 <div class="col-lg-3 col-md-12">
-                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mt-30 mb-35 res-991-mt-0 float-right" href="#">More Services</a>
+                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mt-30 mb-35 res-991-mt-0 float-right" href="{{ route('services.page') }}">More Services</a>
                 </div>
             </div><!-- row end -->
             <div class="row row-equal-height">
@@ -707,7 +711,7 @@
                                 </div>
                                 <div class="featured-desc">
                                     <p>{!! $item->long_description !!}</p>
-                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="#">Read More</a>
+                                    <a class="ttm-btn ttm-btn-color-skincolor btn-inline" href="{{ route('services.page') }}">Read More</a>
                                 </div>
                             </div>
                         </div><!-- featured-box end-->
@@ -736,7 +740,7 @@
                                 <div class="heading-seperator"><span></span></div>
                                 <p>If you need any General Merchants Services we are available for you.</p>
                             </div><!-- section title end -->
-                            <a class="ttm-btn ttm-btn-color-white btn-inline ttm-icon-btn-right mt_25" href="#">Contact Us<i class="ti ti-arrow-right"></i></a>
+                            <a class="ttm-btn ttm-btn-color-white btn-inline ttm-icon-btn-right mt_25" href="{{ route('contact.page') }}">Contact Us<i class="ti ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -760,7 +764,7 @@
                                             </div>
                                             {{-- <div class="testimonial-avatar">
                                                 <div class="testimonial-img">
-                                                    <img class="img-center" src="{{ asset('frontend/images/testimonial/02.jpg') }} " alt="testimonial-img">
+                                                    <img class="img-center" src="{{ asset('frontend/images/testimonial/02.jpg') }}" alt="testimonial-img">
                                                 </div>
                                             </div> --}}
                                         </div><!-- testimonials end -->
@@ -810,12 +814,12 @@
                 <div class="col-lg-9 col-md-12">
                     <!-- section-title -->
                     <div class="section-title style2 clearfix">
-                        <h2 class="title">Our<strong>Latest Projects</strong></h2>
+                        <h2 class="title">Our <strong>Latest Projects</strong></h2>
                         <p>Fanimic Global Resources has 29+ years of experience with providing wide area of specialty services works listed below.</p>
                     </div><!-- section-title end -->
                 </div>
                 <div class="col-lg-3 col-md-12">
-                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mt-30 mb-35 res-991-mt-0 float-right" href="#">More Work</a>
+                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mt-30 mb-35 res-991-mt-0 float-right" href="{{ route('project.page') }}">More Work</a>
                 </div>
             </div><!-- row end -->
             <!-- row -->

@@ -12,6 +12,12 @@
     $testimonials = App\Models\Home\HomeTestimonial::latest()->get();
     $multiImages = App\Models\Home\MultiImage::latest()->paginate(6);
 @endphp
+
+
+@section('title')
+    {{ $abouts->coy_name }} | Electrical Installation
+@endsection
+
     <!-- page-title -->
     {{-- <div style='background-image: url("{% static 'fanimic/images/farm/electric/electric-9.jpg' %}")'; class="ttm-page-title-row"> --}}
     <div style='background-image: url("{{ asset('frontend/images/farm/electric/electric-9.jpg') }}")'; class="ttm-page-title-row">
@@ -190,16 +196,7 @@
                         
                     </div>
                     <div class="col-lg-3 sidebar sidebar-left">
-                        <aside class="widget widget-nav-menu">
-                            <ul class="widget-menu">
-                                <li class="active"><a href="{% url 'building' %}">Building Construction</a></li>
-                                <li><a href="{% url 'electrical' %}">Electrical Installation</a></li>
-                                <li><a href="{% url 'decorator' %}">Interiors &amp; Exteriors Decorator</a></li>
-                                <li><a href="{% url 'manufacturing' %}">Bottle &amp; Pure Water</a></li>
-                                <li><a href="{% url 'agriculture' %}">Agriculture</a></li>
-                                <li><a href="{% url 'agriculture' %}">Fumigation &amp; Pests Control</a></li>
-                            </ul>
-                        </aside>
+                        @include('frontend/body/services_common')
                         <!-- <aside class="widget widget-download">
                             <h3 class="widget-title">Downloads</h3>
                             <ul class="download">
@@ -315,7 +312,7 @@
                         </div><!-- section-title end -->
                     </div>
                     <div class="col-lg-3 col-md-12">
-                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mt-30 mb-35 res-991-mt-0 float-right" href="{% url 'contact' %}">Get Quote</a>
+                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mt-30 mb-35 res-991-mt-0 float-right" href="{{ route('contact.page') }}">Get Quote</a>
                     </div>
                 </div><!-- row end -->
                 <!-- row -->
@@ -348,7 +345,7 @@
                                     and aluminum wiring repair 
                                     to landscape lighting and ceiling fan installation.
                                 </p>
-                                <a class="ttm-btn btn-inline ttm-btn-color-skincolor ttm-icon-btn-right" href="{% url 'contact' %}">Contact Us<i class="ti ti-arrow-right"></i></a>
+                                {{-- <a class="ttm-btn btn-inline ttm-btn-color-skincolor ttm-icon-btn-right" href="{{ route('contact.page') }}">Contact Us<i class="ti ti-arrow-right"></i></a> --}}
                             </div>
                         </div><!-- post end -->
                         <!-- post -->
@@ -378,7 +375,7 @@
                                     big or small, we are committed to providing the 
                                     highest quality service possible for your business.
                                 </p>
-                                <a class="ttm-btn btn-inline ttm-btn-color-skincolor ttm-icon-btn-right" href="{% url 'contact' %}">Contact Us<i class="ti ti-arrow-right"></i></a>
+                                {{-- <a class="ttm-btn btn-inline ttm-btn-color-skincolor ttm-icon-btn-right" href="{{ route('contact.page') }}">Contact Us<i class="ti ti-arrow-right"></i></a> --}}
                             </div>
                         </div><!-- post end -->
                         <!-- post -->
@@ -406,7 +403,7 @@
                                     your home. When done the right way, this means your 
                                     home is safe and functional for years to come.
                                 </p>
-                                <a class="ttm-btn btn-inline ttm-btn-color-skincolor ttm-icon-btn-right" href="{% url 'contact' %}">Contact Us<i class="ti ti-arrow-right"></i></a>
+                                {{-- <a class="ttm-btn btn-inline ttm-btn-color-skincolor ttm-icon-btn-right" href="{{ route('contact.page') }}">Contact Us<i class="ti ti-arrow-right"></i></a> --}}
                             </div>
                         </div><!-- post end-->
                         

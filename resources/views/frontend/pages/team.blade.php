@@ -14,6 +14,10 @@
 @endphp
 
 
+@section('title')
+    {{ $abouts->coy_name }} | Our Team
+@endsection
+
     <!-- page-title -->
     <div class="ttm-page-title-row">
         <div class="section-overlay"></div>
@@ -228,7 +232,7 @@
                                 <!-- ttm-item-view-leftimage -->
                                 <div class="ttm-item-view-leftimage"> 
                                     <div class="featured-thumbnail">
-                                        <img class="img-fluid" src="{{ asset('frontend/images/farm/team/2.png') }} " alt="">
+                                        <img class="img-fluid" src="{{ asset('frontend/images/farm/team/2.jpg') }} " alt="">
 
                                     </div> 
                                     <div class="ttm-box-view-overlay ttm-team-box-view-overlay">

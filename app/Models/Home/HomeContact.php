@@ -9,4 +9,5 @@ class HomeContact extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    
 }

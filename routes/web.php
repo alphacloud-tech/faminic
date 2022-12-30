@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Home\HomeAboutController;
 use App\Http\Controllers\Home\HomeContactController;
 use App\Http\Controllers\Home\HomeServiceController;
@@ -31,8 +32,7 @@ Route::get('/phpinfo', function() {
 Route::get('/', function () {
     // $sliders = HomeSlider::latest()->get();
     return view('frontend.index');
-});
-
+})->name('home');
 Route::get('/about', function () {
     return view('frontend.pages.about');
 })->name('about.page');
@@ -40,11 +40,6 @@ Route::get('/about', function () {
 Route::get('/team', function () {
     return view('frontend.pages.team');
 })->name('team.page');
-
-
-
-
-
 
 
 Route::get('/contact', function () {
@@ -86,31 +81,33 @@ Route::get('/project', function () {
     return view('frontend.pages.project');
 })->name('project.page');
 
-Route::get('/services', function () {
-    return view('frontend.pages.services');
-})->name('services.page');
+Route::prefix('services')->group(function () {
+    Route::get('/', function () {
+        return view('frontend.pages.services');
+    })->name('services.page');
 
-Route::get('/building', function () {
-    return view('frontend.pages.building');
-})->name('building.page');
+    Route::get('/building', function () {
+        return view('frontend.pages.building');
+    })->name('building.page');
 
-Route::get('/eletrical', function () {
-    return view('frontend.pages.eletrical');
-})->name('eletrical.page');
+    Route::get('/eletrical', function () {
+        return view('frontend.pages.eletrical');
+    })->name('eletrical.page');
 
-Route::get('/interiors', function () {
-    return view('frontend.pages.interiors');
-})->name('interiors.page');
+    Route::get('/interiors', function () {
+        return view('frontend.pages.interiors');
+    })->name('interiors.page');
 
-Route::get('/manufacturing', function () {
-    return view('frontend.pages.water');
-})->name('manufacturing.page');
+    Route::get('/manufacturing', function () {
+        return view('frontend.pages.water');
+    })->name('manufacturing.page');
 
 
-Route::get('/agriculture', function () {
-    return view('frontend.pages.agriculture');
-})->name('agriculture.page');
+    Route::get('/agriculture', function () {
+        return view('frontend.pages.agriculture');
+    })->name('agriculture.page');
 
+});
 
 Route::middleware([
     'auth:sanctum',
@@ -185,8 +182,10 @@ Route::get("/admin/delete/testimonial/{id}", [MultiImageController::class, "dest
 
 // Contact Route
 Route::get('/admin/contact', [HomeContactController::class, 'index'])->name('admin.contact');
+
 Route::get('/create/contact', [HomeContactController::class, 'create'])->name('admin.create.contact');
 Route::post('/add/contact', [HomeContactController::class, 'store'])->name('admin.store.contact');
+
 Route::get('/edit/contact/{id}', [HomeContactController::class, 'edit'])->name('admin.edit.contact');
 Route::post('/update/contact/{id}', [HomeContactController::class, 'update'])->name('admin.update.contact');
 
@@ -194,4 +193,10 @@ Route::get('/delete/contact/{id}', [HomeContactController::class, 'destroy'])->n
 
 Route::get('/admin/message', [HomeContactController::class, 'AdminMessage'])->name('admin.message');
 Route::get('/delete/message/{id}', [HomeContactController::class, 'AdminDeleteMessage'])->name('delete.message');
+
+
+
+// Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.page');
+// Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
+
 

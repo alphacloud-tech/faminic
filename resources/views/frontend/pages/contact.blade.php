@@ -13,6 +13,10 @@
     $multiImages = App\Models\Home\MultiImage::latest()->paginate(6);
 @endphp
 
+@section('title')
+    {{ $abouts->coy_name }} | Contact Us
+@endsection
+
     <!-- page-title -->
     <div class="ttm-page-title-row">
         <div class="section-overlay"></div>
@@ -63,18 +67,27 @@
                                             <span class="ttm-form-control">
                                                 <input class="text-input" name="name" type="text" value="" placeholder="Your Name:*" required="required">
                                             </span>
+                                            @if ($errors->has('name'))
+                                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                                            @endif
                                         </label>
                                         <label>
                                             <i class="ti ti-email"></i>
                                             <span class="ttm-form-control">
                                                 <input class="text-input" name="email" type="text" value="" placeholder="Your email-id:*" required="required">
                                             </span>
+                                            @if ($errors->has('email'))
+                                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                            @endif
                                         </label>
                                         <label>
                                             <i class="ti ti-headphone"></i>
                                             <span class="ttm-form-control">
                                                 <input class="text-input" name="phone" type="text" value="" placeholder="Your Number:*" required="required">
                                             </span>
+                                            @if ($errors->has('phone'))
+                                                <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                            @endif
                                         </label>
                                         <label>
                                             <i class="ti ti-headphone"></i>
@@ -87,8 +100,12 @@
                                             <span class="ttm-form-control">
                                                 <textarea class="text-area" name="message" placeholder="Your Message:*" required="required"></textarea>
                                             </span>
+                                            @if ($errors->has('message'))
+                                                <span class="text-danger">{{ $errors->first('message') }}</span>
+                                            @endif
                                         </label>
-                                        <input name="submit" type="submit" value="Submit Now!" class="ttm-btn ttm-btn-size-md  ttm-btn-style-border ttm-btn-color-white" id="submit" title="Submit now"/>
+                                        <button class="btn btn-success btn-submit">Submit</button>
+                                        {{-- <input name="submit" type="submit" value="Submit Now!" class="ttm-btn ttm-btn-size-md  ttm-btn-style-border ttm-btn-color-white" id="submit" title="Submit now"/> --}}
                                     </form>
 
                                 </div>

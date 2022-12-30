@@ -24,7 +24,7 @@
                         <i class="fa fa-envelope-o"></i>
                         <h3 class="widget-title">Need support? Drop us an email</h3>
                         <p>{{ $contacts->email_1 }}<br>{{ $contacts->email_2 }}</p>
-                        <a class="ttm-btn btn-inline style2" href="#">Fill Our Form</a>
+                        <a class="ttm-btn btn-inline style2" href="{{ route('contact.page') }}">Fill Our Form</a>
                     </div>
                 </div> 
                 
@@ -33,7 +33,7 @@
                         <i class="fa fa-clock-o"></i>
                         <h3 class="widget-title">We are open on</h3>
                         <p>Mon – Sat 07:00 – 21:00<br>Sunday – Closed</p>
-                        <a class="ttm-btn btn-inline style2" href="#">View More</a>
+                        {{-- <a class="ttm-btn btn-inline style2" href="#">View More</a> --}}
                     </div>
                 </div>
             </div><!-- row end -->    

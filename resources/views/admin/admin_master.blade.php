@@ -5,12 +5,12 @@
 <head>
 
         <meta charset="utf-8" />
-        <title>Dashboard | Minia - Minimal Admin & Dashboard Template</title>
+        <title>FANIMIC GLOBAL RESOURCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
+        <meta content="FANIMIC GLOBAL RESOURCES" name="description" />
+        <meta content="FANIMIC GLOBAL RESOURCES" name="FANIMIC GLOBAL RESOURCES" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }} ">
+        <link rel="shortcut icon" href="{{ asset('frontend/images/favicon1.png') }} ">
 
         <!-- Sweet Alert-->
         <link href="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />

@@ -13,6 +13,11 @@
     $multiImages = App\Models\Home\MultiImage::latest()->paginate(6);
 @endphp
 
+
+@section('title')
+    {{ $abouts->coy_name }} | Interiors & Exteriors Decorator
+@endsection
+
     <!-- page-title -->
     {{-- <div style='background-image: url("{% static 'fanimic/images/farm/decorator/office.jpg' %}")'; class="ttm-page-title-row"> --}}
     <div style='background-image: url("{{ asset('frontend/images/farm/decorator/office.jpg') }}")'; class="ttm-page-title-row">
@@ -270,16 +275,7 @@
                        
                     </div>
                     <div class="col-lg-3 sidebar sidebar-left">
-                        <aside class="widget widget-nav-menu">
-                            <ul class="widget-menu">
-                                <li class="active"><a href="{% url 'building' %}">Building Construction</a></li>
-                                <li><a href="{% url 'electrical' %}">Electrical Installation</a></li>
-                                <li><a href="{% url 'decorator' %}">Interiors &amp; Exteriors Decorator</a></li>
-                                <li><a href="{% url 'manufacturing' %}">Bottle &amp; Pure Water</a></li>
-                                <li><a href="{% url 'agriculture' %}">Agriculture</a></li>
-                                <li><a href="{% url 'agriculture' %}">Fumigation &amp; Pests Control</a></li>
-                            </ul>
-                        </aside>
+                        @include('frontend/body/services_common')
                         
                         <aside class="widget widget_media_image">
                             <!-- <a href="{% url 'contact' %}"><img class="img-fluid" src="{% static 'fanimic/images/banner-image.jpg' %}" alt="banner-image"></a> -->
